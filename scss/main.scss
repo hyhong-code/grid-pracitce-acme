@@ -99,11 +99,15 @@ p {
 
   .content-wrap {
     padding: 0 2rem;
+    max-width: 110rem;
+    margin: auto;
   }
 }
 
 // SECTION-B
 #section-b {
+  max-width: 110rem;
+  margin: auto;
   padding: 3rem 2rem 2rem;
 
   li {
@@ -120,6 +124,11 @@ p {
 #section-c {
   @include set-bg(#eaeaea);
   padding: 3rem;
+
+  .content-wrap {
+    max-width: 110rem;
+    margin: auto;
+  }
 }
 
 // SECTION-D
@@ -130,6 +139,9 @@ p {
     &:first-child {
       @include set-bg(#2690d4);
     }
+    &:last-child {
+      @include set-bg(lighten(#333, 15%));
+    }
   }
 }
 
@@ -137,4 +149,46 @@ p {
 #main-footer {
   padding: 2rem;
   @include set-bg(#000);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr repeat(2, minmax(25rem, auto)) 1fr;
+
+    .content-wrap,
+    ul {
+      grid-column: 2/4;
+    }
+  }
+
+  #section-a {
+    .content-text {
+      columns: 2;
+      column-gap: 2rem;
+    }
+  }
+
+  #section-b {
+    ul {
+      display: flex;
+      justify-content: space-around;
+
+      li {
+        flex: 0 1 31%;
+      }
+    }
+  }
+
+  #section-d {
+    .box {
+      grid-column: span 2;
+    }
+  }
+
+  #main-footer {
+    div {
+      grid-column: span 2;
+    }
+  }
 }
