@@ -56,6 +56,19 @@ p {
   }
 }
 
+@function set-text-color($bg-color) {
+  @if (lightness($bg-color) > 70) {
+    @return #333;
+  } @else {
+    @return #eaeaea;
+  }
+}
+
+@mixin set-bg($bg-color) {
+  background-color: $bg-color;
+  color: set-text-color($bg-color);
+}
+
 // SHOWCASE
 #showcase {
   min-height: 45rem;
@@ -77,4 +90,51 @@ p {
   .content-wrap {
     padding: 0 2rem;
   }
+}
+
+// SECTION-A
+#section-a {
+  @include set-bg(#eaeaea);
+  padding-bottom: 2rem;
+
+  .content-wrap {
+    padding: 0 2rem;
+  }
+}
+
+// SECTION-B
+#section-b {
+  padding: 3rem 2rem 2rem;
+
+  li {
+    margin-bottom: 1.5rem;
+    @include set-bg(#eaeaea);
+  }
+}
+
+.card-content {
+  padding: 2rem;
+}
+
+// SECTION-C
+#section-c {
+  @include set-bg(#eaeaea);
+  padding: 3rem;
+}
+
+// SECTION-D
+#section-d {
+  .box {
+    padding: 3rem;
+
+    &:first-child {
+      @include set-bg(#2690d4);
+    }
+  }
+}
+
+// FOOTER
+#main-footer {
+  padding: 2rem;
+  @include set-bg(#000);
 }

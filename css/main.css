@@ -59,3 +59,36 @@ p {
     padding-top: 10rem; }
   #showcase .content-wrap {
     padding: 0 2rem; }
+
+#section-a {
+  background-color: #eaeaea;
+  color: #333;
+  padding-bottom: 2rem; }
+  #section-a .content-wrap {
+    padding: 0 2rem; }
+
+#section-b {
+  padding: 3rem 2rem 2rem; }
+  #section-b li {
+    margin-bottom: 1.5rem;
+    background-color: #eaeaea;
+    color: #333; }
+
+.card-content {
+  padding: 2rem; }
+
+#section-c {
+  background-color: #eaeaea;
+  color: #333;
+  padding: 3rem; }
+
+#section-d .box {
+  padding: 3rem; }
+  #section-d .box:first-child {
+    background-color: #2690d4;
+    color: #eaeaea; }
+
+#main-footer {
+  padding: 2rem;
+  background-color: #000;
+  color: #eaeaea; }
